@@ -82,6 +82,9 @@ model_1.summary()
 #Run the model using training data
 model_1.fit(X_train, Y_train, epochs=100, verbose=1)
  
+#Show the structure of the model
+plot_model(model=model_1, show_shapes=True)
+
 #Predict the y values using the first model
 Y_pred_1=model_1.predict(X_test)
 
