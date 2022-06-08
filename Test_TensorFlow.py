@@ -9,6 +9,7 @@ Original file is located at
 This is a test project to get a simple Deep Learning model working with Colab
 """
 
+# %%
 import tensorflow as tf
 import numpy as np
 import pandas as pd
@@ -29,7 +30,7 @@ X_train = X[:int(input_len*0.75)]
 Y_train = Y[:int(input_len*0.75)]
 print(X_train)
 print(Y_train)
-
+#%%
 #Use the remaining 25% of the data set for testing
 X_test = X[int(input_len*0.75):]
 Y_test = Y[int(input_len*0.75):]
@@ -81,7 +82,7 @@ model_1.summary()
 
 #Run the model using training data
 model_1.fit(X_train, Y_train, epochs=100, verbose=1)
- 
+# %%
 #Show the structure of the model
 plot_model(model=model_1, show_shapes=True)
 
@@ -94,7 +95,7 @@ model_pred = model_prediction(Y_pred_1, 'red', "Prediction: lr=" + str(model_1.o
 model_predictions.append(model_pred)
 #Plot the first model's prediction together with the train and test data
 plot_predictions(X_train, Y_train, X_test, Y_test, model_predictions)
-
+# %%
 #set the random seed to ensure reproducibility
 tf.random.set_seed(42)
 #Setup the keras dense model using 2 layers
@@ -136,3 +137,4 @@ model_pred = model_prediction(Y_pred_3, 'purple', "Prediction: lr=" + str(model_
 model_predictions.append(model_pred)
 #Plot the third model's prediction together with the train and test data and other predictions
 plot_predictions(X_train, Y_train, X_test, Y_test, model_predictions)
+# %%
